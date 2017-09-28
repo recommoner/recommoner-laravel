@@ -1,0 +1,43 @@
+.panel {
+    background-color: #fff;
+    margin-bottom: 11px;
+}
+
+.listing-details {
+    height: 206px;
+    padding: 15px;
+}
+
+.listing-details p {
+    color: #858585;
+}
+
+.disply {
+    display: inline-block;
+}
+
+.challenge-content {
+    margin-left: 42px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.container {
+    min-height: 520px;
+}
+
+.listing-image {
+    text-align: center;
+}
+
+.listing-image img {
+    width: 100%;
+    height: 277px;
+}
+
+.fileType input{
+    width: 103px;
+    height: 24px;
+}
+.mb30{
+    margin-bottom: 30px;
+}
