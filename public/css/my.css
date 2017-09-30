@@ -9,7 +9,15 @@
 }
 
 .listing-details p {
-    color: #858585;
+    color: #5e5e5e;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.listing-details h3 {
+    color: black;
+    font-size: 15px;
+    line-height: 21px;
 }
 
 .disply {
@@ -21,6 +29,7 @@
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
 .container {
     min-height: 520px;
 }
@@ -34,10 +43,50 @@
     height: 277px;
 }
 
-.fileType input{
+.fileType input {
     width: 103px;
     height: 24px;
 }
-.mb30{
+
+.mb30 {
     margin-bottom: 30px;
+}
+
+.maxHeight483 {
+    max-height: 483px;
+}
+
+.commentList h4 {
+    margin-bottom: 3px;
+}
+
+.commentList p {
+    line-height: 27px;
+    color: #565454;
+
+}
+
+.commentList span {
+    font-size: 11px;
+    margin-left: 5px;
+    color: gray;
+}
+.p0{
+    padding: 0;
+}
+@media (max-width: 768px){
+    .w-30,
+    .col-md-4,
+    .col-md-12{
+        width: 100% !important;
+    }
+    .ml2{
+        margin-left: 0 !important;
+    }
+    .challenge-content{
+        margin-left: 0 !important;
+    }
+    .pull-right{
+        float: none !important;
+    }
 }

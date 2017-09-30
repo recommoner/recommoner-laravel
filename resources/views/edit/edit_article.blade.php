@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <label>Description</label>
-                            <textarea required name="description" class="form-control"
+                            <textarea required  maxlength="200"  name="description" class="form-control"
                                       style="height: 150px">@yield('editDescription')</textarea>
                         </div>
                         <div class="col-md-12 form-group">

@@ -91,7 +91,7 @@
                     </a>
                 </div>
                 <div id="navlinks" class="dtc tr pt3 ph3">
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/challenge">Challenge</a>
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/narratives">Narratives</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="http://recommoning.com"
                        target="_blank">Blog</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/download">Download</a>

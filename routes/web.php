@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('/download', 'DownloadController@index')->name('download');
-Route::get('/challenge', 'ChallengeController@index')->name('download');
+Route::resource('/narratives', 'NarrativesController');
 Route::resource('/articles', 'articlesController');
+Route::resource('/comments', 'commentsController');
+Route::get('/comments/{id}/{status}', 'commentsController@edit');
