@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\comment;
+use Illuminate\Support\Facades\DB;
 
 class CommentsController extends Controller
 {
@@ -14,7 +15,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        $comments = comment::all();
+        $comments = DB::table('comments')->paginate(20);
         return view('comments', compact('comments'));
     }
 
@@ -87,6 +88,8 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = comment::find($id);
+        $item->delete();
+        return redirect('comments');
     }
 }

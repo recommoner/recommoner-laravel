@@ -549,7 +549,7 @@ dd {
     }
 
     .col-md-4 {
-        width: 33.33333333333333%;
+        width: 30.33333333333333%;
     }
 
     .col-md-3 {
@@ -2111,6 +2111,9 @@ a{
     text-decoration: none;
 }
 /*# sourceMappingURL=bootstrap.css.map */
-.hPadding32 {
-    padding-bottom: 32px !important;
+.hPadding19 {
+    padding-bottom: 19px !important;
+}
+.slick-next:before, .slick-prev:before{
+    color: transparent;
 }

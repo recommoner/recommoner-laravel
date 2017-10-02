@@ -41,10 +41,10 @@
         <div id="vidcol" class="fl w-100 w-50-ns">
             <video id="video" class="video-js center w-100 w-50-ns fl" controls preload="auto" poster="/images/poster.jpg"
                    data-setup="{}">
-                <source src="vids/large.mp4" type='video/mp4'>
-                <source src="vids/large.webm" type='video/webm'>
-                <source src="vids/small.mp4" type='video/mp4'>
-                <source src="vids/small.webm" type='video/webm'>
+                <source src="http://www.recommoner.com/beta/vids/large.mp4" type='video/mp4'>
+                <source src="http://www.recommoner.com/beta/vids/large.webm" type='video/webm'>
+                <source src="http://www.recommoner.com/beta/vids/small.mp4" type='video/mp4'>
+                <source src="http://www.recommoner.com/beta/vids/small.webm" type='video/webm'>
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a web browser that
                     <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>

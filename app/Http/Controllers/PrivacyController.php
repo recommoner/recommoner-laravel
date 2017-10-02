@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\article;
-use App\comment;
 
-/**
- * @property  users
- */
-class NarrativesController extends Controller
+class PrivacyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +13,7 @@ class NarrativesController extends Controller
      */
     public function index()
     {
-        $articles = article::all();
-        return view('narratives', compact('articles'));
+        return view('privacy');
     }
 
     /**
@@ -40,7 +34,7 @@ class NarrativesController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -51,11 +45,7 @@ class NarrativesController extends Controller
      */
     public function show($id)
     {
-        $item = article::find($id);
-        $comments = comment::where(['post' => $id, 'status' => 1])->get();
-        $data['item'] = $item;
-        $data['comments'] = $comments;
-        return view('narratives_single', compact('data'));
+        //
     }
 
     /**

@@ -84,13 +84,13 @@
 <main id="wrapper">
     <header class="">
         <nav class="center">
-            <div class="pa3 hPadding32 dt w-100">
-                <div class="dtc w2 v-mid pa1">
-                    <a href="/" class="dib w5 h2 pv2">
+            <div class="pa3 hPadding19 dt w-100">
+                <div class="dtc w2 min_inBlk v-mid pa1">
+                    <a href="/" class="dib w5 logo h2 pv2">
                         <img src="/images/logo-beta.svg">
                     </a>
                 </div>
-                <div id="navlinks" class="dtc tr pt3 ph3">
+                <div id="navlinks" class="dtc tr min_pb18 pt3 ph3">
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/narratives">Narratives</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="http://recommoning.com"
                        target="_blank">Blog</a>
@@ -123,8 +123,8 @@
     <footer class="pv4 white">
         <div class="tc mv2">
             <a href="#" title="Language" class="f6 dib ph2 link white dim">Language</a>
-            <a href="#" title="Terms" class="f6 dib ph2 link white dim">Terms of Use</a>
-            <a href="#" title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
+            <a href="/terms" title="Terms" class="f6 dib ph2 link white dim">Terms of Use</a>
+            <a href="/privacy" title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
         </div>
         <small class="f7 db tc">Content licensed under a Creative Commons Attribution Non-Commercial ShareAlike 3.0
             Unported License.<br><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"

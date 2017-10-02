@@ -26,7 +26,7 @@
             max-width: 100%;
         }
     </style>
-    <div class="container panel">
+    <div class="container panel" style="padding-left: 75px !important; padding-right: 75px !important;">
         <div class="form-group titleSet">
             <h2>{{$data['item']->title}}</h2>
             <span>{{$data['item']->created_at}}</span>

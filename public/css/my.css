@@ -1,6 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 .panel {
     background-color: #fff;
     margin-bottom: 11px;
+}
+
+.brdr3 {
+    border-radius: 3px;
+}
+
+.ptbSet {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.loginName {
+    margin-top: 0;
+    margin-bottom: 34px;
+    /*color: white;*/
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+}
+
+.full-btn {
+    width: 100%;
+    height: 40px;
+}
+
+.narratives-header {
+    background-image: url(https://d3gxp3iknbs7bs.cloudfront.net/challenge-header-background/6784750d-ad99-48a9-9cad-d7f58e3f9ae4.jpg);
+    height: 180px;
+    background-repeat: repeat;
+    background-size: initial;
+    background-position: center center;
+}
+
+.narratives-header h2 {
+    margin: 0;
+    padding: 49px;
+    display: block;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.62);
+    color: #fff;
+    padding-top: 24px;
 }
 
 .listing-details {
@@ -53,7 +95,7 @@
 }
 
 .maxHeight483 {
-    max-height: 483px;
+    max-height: 583px;
 }
 
 .commentList h4 {
@@ -71,22 +113,90 @@
     margin-left: 5px;
     color: gray;
 }
-.p0{
+
+.p0 {
     padding: 0;
 }
-@media (max-width: 768px){
+
+@media (max-width: 768px) {
     .w-30,
     .col-md-4,
-    .col-md-12{
+    .col-md-12 {
         width: 100% !important;
     }
-    .ml2{
+
+    .ml2 {
         margin-left: 0 !important;
     }
-    .challenge-content{
+
+    .challenge-content {
         margin-left: 0 !important;
     }
-    .pull-right{
+
+    .pull-right {
         float: none !important;
     }
+}
+
+.pagination, .pagination2, .pagination3 {
+    display: inline-block;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.pagination li, .pagination2 li, .pagination3 li {
+    display: inline;
+}
+
+.pagination .active {
+    padding: 8px 16px;
+    background-color: #FF7734;
+    color: #fff;
+}
+
+.pagination .disabled {
+    padding: 8px 16px;
+    background-color: #d2cece;
+    color: #000;
+}
+
+.pagination li a, .pagination2 li a, .pagination3 li a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #fff;
+    margin: 1px;
+}
+@media (max-width: 768px) {
+    .video-dimensions{
+        width: 350px !important;
+        margin-bottom: 20px;
+    }
+    .pa3{
+        padding: 0 !important;
+    }
+    .logo img{
+        width: 140px;
+        padding-left: 20px;
+    }
+    .mw8 {
+        width: 23rem !important;
+    }
+    #loginBtn{
+        padding: 9px;
+    }
+    #signupBtn{
+        padding: 9px;
+    }
+    .min_inBlk{
+        display: inline-block !important;
+    }
+    .min_pb18{
+        padding-bottom: 18px;
+    }
+    .ptbSet{
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
 }

@@ -1,25 +1,25 @@
 @extends('master')
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-9 form-group">
+        <div class="row mt4">
+            <div class="col-md-8 form-group">
                 <h1>Articles</h1>
             </div>
-            <div class="col-md-3 mt4 form-group">
+            <div class="col-md-4 mt4 form-group pr0">
                 <div class="pull-right">
-                    <a href="/comments" class="btn btn-default">Comments</a>
-                    <a href="articles/create" class="btn btn-primary ">Add New</a>
+                    <a href="/comments" class="btn btn-default btn-lg">Comments</a>
+                    <a href="articles/create" class="btn btn-primary btn-lg">Add New Articles</a>
                 </div>
             </div>
 
-            <div class="col-md-12 table-responsive panel form-group">
+            <div class="col-md-12 mt4 table-responsive panel form-group">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th width="20%">Title</th>
-                        <th width="34%">Description</th>
-                        <th width="15%">Created On</th>
-                        <th width="10%">Action</th>
+                        <th width="22%">Title</th>
+                        <th width="40%">Description</th>
+                        <th width="20%">Created On</th>
+                        <th width="20%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,6 +40,9 @@
                     @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="col-md-12 text-center mt4">
+                <?php echo $articles->render(); ?>
             </div>
         </div>
     </div>

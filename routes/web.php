@@ -20,3 +20,5 @@ Route::resource('/narratives', 'NarrativesController');
 Route::resource('/articles', 'articlesController');
 Route::resource('/comments', 'commentsController');
 Route::get('/comments/{id}/{status}', 'commentsController@edit');
+Route::get('/terms', 'TermsController@index');
+Route::get('/privacy', 'PrivacyController@index');

@@ -9,12 +9,12 @@
         {{csrf_field()}}
         {{method_field('PUT')}}
         <fieldset>
-            <div class="container mt4 mb30">
-                <div class="row">
+            <div class="container mt4 panel pt4">
+                <div class="row mb3">
                     <div class="col-md-8">
                         <div class="col-md-12 form-group">
                             <label>Title</label>
-                            <input type="text" required class="form-control" value="@yield('editTitle')" name="title">
+                            <input type="text" required maxlength="50" class="form-control" value="@yield('editTitle')" name="title">
                         </div>
                         <div class="col-md-12 form-group">
                             <label>Description</label>
@@ -44,8 +44,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a href="/articles" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="/articles" class="btn btn-default btn-lg">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>
                 </div>

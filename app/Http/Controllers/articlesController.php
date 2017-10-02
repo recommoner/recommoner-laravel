@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\article;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class articlesController extends Controller
 {
@@ -21,7 +21,7 @@ class articlesController extends Controller
      */
     public function index()
     {
-        $articles = article::all();
+        $articles = DB::table('articles')->paginate(15);
         return view('articles', compact('articles'));
     }
 

@@ -9,7 +9,7 @@
         {{method_field('PUT')}}
         <fieldset>
             <div class="container mt4 mb30">
-                <div class="row">
+                <div class="row mt4">
                     <div class="col-md-8">
                         <div class="col-md-6 form-group">
                             <label>Name</label>
@@ -35,8 +35,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a href="/comments" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="/comments" class="btn btn-default btn-lg">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>
                 </div>

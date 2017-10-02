@@ -1,11 +1,11 @@
 @extends('master')
 @section('content')
    <span></span>
-    <div class="loginForm">
+    <div class="loginForm" style="background-image: url(http://www.goodwp.com/images/201411/goodwp.com_31995.jpg); background-repeat: no-repeat;background-size: 100% 100%">
         <div class="container">
             <div class="row">
-                <div class="mw8 w-31 mt4 center ph2 ph3-ns pv4 mb5 br3 bg-white">
-                    <h3 class="text-center">Login</h3>
+                <div class="mw8 w-31 mt5 center ph2 ph3-ns pv4 mb5 brdr3 bg-white">
+                    <h3 class="text-center loginName">Login</h3>
                     <div class="panel-body">
                         <article class="cf">
                             <div class="fl w-100">
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="form-group col-md-12" style="margin-top: 15px">
                                         <button id="exploreBtn" type="submit"
-                                                class="btn btn-primary">
+                                                class="btn full-btn btn-primary">
                                             Login
                                         </button>
                                     </div>
