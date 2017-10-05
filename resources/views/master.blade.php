@@ -132,10 +132,10 @@
     </footer>
 </main>
 <div id="otherjs">
-    <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
-    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/video.js')}}"></script>
     <script src=""></script>
     <script type="text/javascript">
         $(document).ready(function () {
