@@ -8,7 +8,7 @@
             <div class="col-md-4 mt4 form-group pr0">
                 <div class="pull-right">
                     <a href="/comments" class="btn btn-default btn-lg">Comments</a>
-                    <a href="articles/create" class="btn btn-primary btn-lg">Add New Articles</a>
+                    <a href="{{url('articles/create')}}" class="btn btn-primary btn-lg">Add New Articles</a>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@
                             <td>{{$post->description}}</td>
                             <td>{{$post->created_at}}</td>
                             <td>
-                                <a href="{{'/articles/'.$post->id.'/edit'}}" class="btn btn-info">Edit</a>
+                                <a href="{{url('/articles/'.$post->id.'/edit')}}" class="btn btn-info">Edit</a>
                                 <form style="display: inline-block;" action="{{'/articles/'.$post->id}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}

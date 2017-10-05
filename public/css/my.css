@@ -200,3 +200,13 @@
     }
 
 }
+.slideArrow{
+    color: #fff;
+    z-index: 999999;
+    background-color: rgba(255, 119, 52, 0.67);
+    border-radius: 50%;
+    width: 25px;
+    height: 24px;
+    padding-top: 1px;
+    font-size: 23px !important;
+}

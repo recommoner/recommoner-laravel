@@ -26,7 +26,7 @@
         <div class="clearfix"></div>
         @foreach($articles as $post)
             <div class="panel mb4 col-md-4 p0 ml4 disply maxHeight483">
-                <a href="{{'/narratives/'.$post->id.''}}">
+                <a href="{{url('/narratives/'.$post->id.'')}}">
                     <div class="listing-image">
                         <img src="{{ asset('uploads/'.$post->thumbnail.'')}}" class="image-replace" width="285">
                     </div>

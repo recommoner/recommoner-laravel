@@ -21,9 +21,12 @@
         }
 
         img {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            padding-top: 10px;
+            padding-bottom: 18px;
             max-width: 100%;
+        }
+        .pa3{
+            padding-bottom: 0px !important;
         }
     </style>
     <div class="container panel" style="padding-left: 75px !important; padding-right: 75px !important;">

@@ -4,7 +4,7 @@
 @section('editEmail',$item->email)
 @section('editComment',$item->comment)
 @section('content')
-    <form action="/comments/@yield('editId')" method="POST" enctype="multipart/form-data">
+    <form action="{{url('comments'.$item->id.'')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         {{method_field('PUT')}}
         <fieldset>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a href="/comments" class="btn btn-default btn-lg">Cancel</a>
+                            <a href="{{url('comments')}}" class="btn btn-default btn-lg">Cancel</a>
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>

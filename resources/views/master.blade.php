@@ -20,8 +20,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/video-js.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/md-fonts/mdf.css') }}">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+    <script>
+        asset_url = '<?php echo asset('') ?>'
+    </script>
     <style>
         .bulletpoint .title {
             color: #2f241f;
@@ -89,19 +92,20 @@
                     </a>
                 </div>
                 <div id="navlinks" class="dtc tr min_pb18 pt3 ph3">
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/narratives">Narratives</a>
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ url('narratives') }}">Narratives</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="http://recommoning.com"
                        target="_blank">Blog</a>
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/download">Download</a>
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
+                       href="{{ url('download') }}">Download</a>
                     @if (Auth::guest())
                         <a id="loginBtn"
                            class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
-                           href="/login">Log In</a>
+                           href="{{ url('login') }}">Log In</a>
                         <a id="signupBtn" class="f7 hover-white no-underline white dib mh0 pv2 ph4 br2 mr2 mr3-ns grow"
-                           href="/register">Sign Up</a>
+                           href="{{ url('register') }}">Sign Up</a>
                     @else
                         <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                           href="/articles">{{ Auth::user()->name }}</a>
+                           href="{{url('articles')}}">{{ Auth::user()->name }}</a>
                         <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -119,8 +123,8 @@
     <footer class="pv4 white">
         <div class="tc mv2">
             <a href="#" title="Language" class="f6 dib ph2 link white dim">Language</a>
-            <a href="/terms" title="Terms" class="f6 dib ph2 link white dim">Terms of Use</a>
-            <a href="/privacy" title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
+            <a href="{{url('terms')}}" title="Terms" class="f6 dib ph2 link white dim">Terms of Use</a>
+            <a href="{{url('privacy')}}" title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
         </div>
         <small class="f7 db tc">Content licensed under a Creative Commons Attribution Non-Commercial ShareAlike 3.0
             Unported License.<br><br>

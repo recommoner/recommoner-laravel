@@ -5,7 +5,7 @@
 @section('editContents',$item->contents)
 @section('editDescription',$item->description)
 @section('content')
-    <form action="/articles/@yield('editId')" method="POST" enctype="multipart/form-data">
+    <form action="{{url('articles/'.$item->id.'')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         {{method_field('PUT')}}
         <fieldset>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a href="/articles" class="btn btn-default btn-lg">Cancel</a>
+                            <a href="{{url('articles')}}" class="btn btn-default btn-lg">Cancel</a>
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>

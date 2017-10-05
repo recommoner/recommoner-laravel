@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-    <form action="/articles/@yield('editId')" method="POST" enctype="multipart/form-data">
+    <form action="{{url('articles/')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         @section('editMethod')
         @show
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a href="/articles" class="btn btn-default btn-lg">Cancel</a>
+                            <a href="{{url('articles')}}" class="btn btn-default btn-lg">Cancel</a>
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>

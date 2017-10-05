@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-3 mt4 form-group">
                 <div class="pull-right">
-                    <a href="/articles" class="btn btn-default btn-lg">Articles</a>
+                    <a href="{{url('articles')}}" class="btn btn-default btn-lg">Articles</a>
                 </div>
             </div>
 
@@ -28,8 +28,8 @@
                             <td>{{$post->email}}</td>
                             <td>{{$post->created_at}}</td>
                             <td>
-                                <a href="{{'/comments/'.$post->id.'/'.$post->status.''}}" class="btn btn-default">{{$post->status ==1 ? 'Disapproved':'Approve'}}</a>
-                                <form style="display: inline-block;" action="{{'/comments/'.$post->id}}" method="post">
+                                <a href="{{url('comments/'.$post->id.'/'.$post->status.'')}}" class="btn btn-default">{{$post->status ==1 ? 'Disapproved':'Approve'}}</a>
+                                <form style="display: inline-block;" action="{{url('comments/'.$post->id.'')}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button type="submit" class="btn btn-danger">Delete</button>
