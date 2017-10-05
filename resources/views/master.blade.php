@@ -85,7 +85,7 @@
             <div class="pa3 hPadding19 dt w-100">
                 <div class="dtc w2 min_inBlk v-mid pa1">
                     <a href="/" class="dib w5 logo h2 pv2">
-                        <img src="/images/logo-beta.svg">
+                        <img src="{{ asset('images/logo-beta.svg') }}">
                     </a>
                 </div>
                 <div id="navlinks" class="dtc tr min_pb18 pt3 ph3">
@@ -94,21 +94,19 @@
                        target="_blank">Blog</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/download">Download</a>
                     @if (Auth::guest())
-                    <a id="loginBtn"
-                       class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
-                       href="/login">Log In</a>
-                    <a id="signupBtn" class="f7 hover-white no-underline white dib mh0 pv2 ph4 br2 mr2 mr3-ns grow"
-                       href="/register">Sign Up</a>
+                        <a id="loginBtn"
+                           class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
+                           href="/login">Log In</a>
+                        <a id="signupBtn" class="f7 hover-white no-underline white dib mh0 pv2 ph4 br2 mr2 mr3-ns grow"
+                           href="/register">Sign Up</a>
                     @else
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                       href="/articles">{{ Auth::user()->name }}</a>
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                       href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
+                        <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
+                           href="/articles">{{ Auth::user()->name }}</a>
+                        <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @endif
                 </div>
             </div>
@@ -125,9 +123,11 @@
             <a href="/privacy" title="Privacy" class="f6 dib ph2 link white dim">Privacy</a>
         </div>
         <small class="f7 db tc">Content licensed under a Creative Commons Attribution Non-Commercial ShareAlike 3.0
-            Unported License.<br><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
-                                        target="_blank"><img alt="Creative Commons License" style="border-width:0"
-                                                             src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+            Unported License.<br><br>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">
+                <img alt="Creative Commons License" style="border-width:0"
+                     src="{{ asset('images/licensebuttons.png') }}">
+            </a>
         </small>
     </footer>
 </main>

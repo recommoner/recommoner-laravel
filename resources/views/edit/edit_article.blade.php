@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
 
-                            <img src="/uploads/@yield('editThumbnail')" alt="">
+                            <img src="{{asset('/uploads/'.$item->thumbnail.'')}}" alt="">
                         </div>
                         <div class="form-group fileType">
                             <input type="file" class="form-control" value="@yield('editThumbnail')"

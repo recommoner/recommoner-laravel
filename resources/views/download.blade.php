@@ -60,15 +60,19 @@
                                     our resources, you agree to grant us the ability to follow up with you with
                                     correspondence relating to your usage.
                                 </small>
-                                <span id="submit"><a class="no-underline" href="download-success.html"><h2
-                                                class="f5 near-white tc pt3 fw4 link dim near-black br2 bg-blue pv3">Submit</h2></a></span>
-
+                                <span id="submit">
+                                    <a class="no-underline" href="download-success.html">
+                                        <h2 class="f5 near-white tc pt3 fw4 link dim near-black br2 bg-blue pv3">
+                                            Submit
+                                        </h2>
+                                    </a>
+                                </span>
                             </div>
                         </form>
 
                     </div>
                     <div class="fl w-100 w-50-ns tl ph3">
-                        <img src="/images/download-hero.png" class="mw-100" alt="">
+                        <img src="{{ asset('images/download-hero.png')}}" class="mw-100" alt="">
                         <p class="pv0 mt2 f5">Recommoner is a work in progress – its development depends on usage and
                             testing. Recommoner is licensed under a Creative Commons Attribution 3.0 Unported License
                             and

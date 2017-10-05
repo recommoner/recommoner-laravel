@@ -28,7 +28,7 @@
             <div class="panel mb4 col-md-4 p0 ml4 disply maxHeight483">
                 <a href="{{'/narratives/'.$post->id.''}}">
                     <div class="listing-image">
-                        <img src="/uploads/{{$post->thumbnail}}" class="image-replace" width="285">
+                        <img src="{{ asset('uploads/'.$post->thumbnail.'')}}" class="image-replace" width="285">
                     </div>
                     <div class="listing-details">
                         <h3>{{$post->title}}</h3>

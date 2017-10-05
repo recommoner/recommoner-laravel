@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
     <div id="slider" class="">
-        <div class="cover bg-left pv6 db" style="background-image: url(/images/eviction.jpg);">
+        <div class="cover bg-left pv6 db" style="background-image: url({{ asset('images/eviction.jpg')}}">
             <div id="maintext" class="pt5 ph1 mr5 measure-narrow fr">
                 <h1 class="f2 f1-l mb0 lh-solid">platform your negotiations</h1>
                 <h2 class="f3 mt2 mb3 fw4">Engage your group and make decisions together. </h2>
@@ -18,7 +18,7 @@
                    href="construction/">Explore Now</a>
             </div>
         </div>
-        <div class="cover bg-left pv6 db" style="background-image: url(/images/differenceandinclusion.jpg);">
+        <div class="cover bg-left pv6 db" style="background-image: url({{ asset('images/differenceandinclusion.jpg')}}">
             <div id="maintext" class="pt5 ph1 mr5 measure-narrow fr">
                 <h1 class="f2 f1-l mb0 lh-solid">difference & inclusion</h1>
                 <h2 class="f3 mt2 mb3 fw4">Form collective rules that will respect individual interests. </h2>
@@ -26,7 +26,7 @@
                    href="construction/">Explore Now</a>
             </div>
         </div>
-        <div class="cover bg-left pv6 db" style="background-image: url(/images/negotiatefairly.jpg);">
+        <div class="cover bg-left pv6 db" style="background-image: url({{ asset('images/negotiatefairly.jpg')}}">
             <div id="maintext" class="pt5 ph1 mr5 measure-narrow fr">
                 <h1 class="f2 f1-l mb0 lh-solid">negotiate fairly</h1>
                 <h2 class="f3 mt2 mb3 fw4">Learn patterns of negotiation built on reciprocity, trust, and
@@ -57,7 +57,7 @@
 
             <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
                 <div class="dtc w2 w3-ns v-mid">
-                    <img src="/images/toolkit.svg" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
+                    <img src="{{ asset('images/toolkit.svg')}}" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
                 </div>
                 <div class="dtc v-mid pl3 pv2 bulletpoint">
                     <span class="f6"><span class="title f5 b small-caps">Toolkit</span> Prompts & principles for challenge negotiations.<br><a
@@ -67,7 +67,7 @@
 
             <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
                 <div class="dtc w2 w3-ns v-mid">
-                    <img src="/images/narratives.svg" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
+                    <img src="{{ asset('images/narratives.svg')}}" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
                 </div>
                 <div class="dtc v-mid pl3 pv2 bulletpoint">
                     <span class="f6"><span class="title f5 b small-caps">Narratives</span> Support arguments to improve negotiations and formulate agreements.<br><a
@@ -77,7 +77,7 @@
 
             <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
                 <div class="dtc w2 w3-ns v-mid">
-                    <img src="/images/responsibility.svg" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
+                    <img src="{{ asset('images/responsibility.svg')}}" class="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns"/>
                 </div>
                 <div class="dtc v-mid pl3 pv2 bulletpoint">
                     <span class="f6"><span class="title f5 b small-caps">Shared Responsibilities</span> Participants serve different roles and make decisions together. Roles may be chosen or assigned by the system.<br><a
