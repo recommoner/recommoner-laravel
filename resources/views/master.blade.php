@@ -8,20 +8,18 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" href="{{assets('css/bs.css')}}">
-
+    <link rel="stylesheet" href="{{ asset('css/bs.css') }}">
     <meta name="description" content="Recommoner: address social dilemmas.">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" type="text/css" href="{{assets('css/style.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{assets('css/my.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{assets('css/tachyons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{assets('css/slick-theme.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{assets('css/slick.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{assets('css/video-js.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/my.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tachyons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/video-js.css') }}">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
