@@ -9,7 +9,7 @@
                    href="construction/">Explore Now</a>
             </div>
         </div>
-        <div class="cover bg-left pv6 db" style="background-image: url(/images/village.jpg);">
+        <div class="cover bg-left pv6 db" style="background-image: url({{asset('images/village.jpg')}});">
             <div id="maintext" class="pt5 ph1 mr5 measure-narrow fr">
                 <h1 class="f2 f1-l mb0 lh-solid">different roles</h1>
                 <h2 class="f3 mt2 mb3 fw4">Based on the Yoruba village idea, roles open up new spaces for commons-based
@@ -39,7 +39,7 @@
 
     <article id="about" class="cf center white pt2 center v-mid mw8">
         <div id="vidcol" class="fl w-100 w-50-ns">
-            <video id="video" class="video-js center w-100 w-50-ns fl" controls preload="auto" poster="/images/poster.jpg"
+            <video id="video" class="video-js center w-100 w-50-ns fl" controls preload="auto" poster="{{asset('images/poster.jpg')}}"
                    data-setup="{}">
                 <source src="http://www.recommoner.com/beta/vids/large.mp4" type='video/mp4'>
                 <source src="http://www.recommoner.com/beta/vids/large.webm" type='video/webm'>
