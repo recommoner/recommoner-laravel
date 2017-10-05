@@ -10,18 +10,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" href="/css/bs.css">
+    <link rel="stylesheet" href="{{assets('css/bs.css')}}">
 
     <meta name="description" content="Recommoner: address social dilemmas.">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/my.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/tachyons.css">
-    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="/css/video-js.css">
+    <link rel="stylesheet" type="text/css" href="{{assets('css/style.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{assets('css/my.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{assets('css/tachyons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{assets('css/slick-theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{assets('css/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{assets('css/video-js.css')}}">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
@@ -96,21 +96,21 @@
                        target="_blank">Blog</a>
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="/download">Download</a>
                     @if (Auth::guest())
-                        <a id="loginBtn"
-                           class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
-                           href="/login">Log In</a>
-                        <a id="signupBtn" class="f7 hover-white no-underline white dib mh0 pv2 ph4 br2 mr2 mr3-ns grow"
-                           href="/register">Sign Up</a>
+                    <a id="loginBtn"
+                       class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
+                       href="/login">Log In</a>
+                    <a id="signupBtn" class="f7 hover-white no-underline white dib mh0 pv2 ph4 br2 mr2 mr3-ns grow"
+                       href="/register">Sign Up</a>
                     @else
-                        <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                           href="/articles">{{ Auth::user()->name }}</a>
-                        <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                           href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
+                       href="/articles">{{ Auth::user()->name }}</a>
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
+                       href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                     @endif
                 </div>
             </div>
@@ -168,6 +168,8 @@
         ga('send', 'pageview');
     </script>
 </div>
-{{--<script src="{{ asset('js/app.js') }}"></script>--}}
+{{--
+<script src="{{ asset('js/app.js') }}"></script>
+--}}
 </body>
 </html>
