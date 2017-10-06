@@ -18,7 +18,7 @@ Auth::routes();
 Route::get('/download', 'DownloadController@index')->name('download');
 Route::resource('/narratives', 'NarrativesController');
 Route::resource('/articles', 'articlesController');
-Route::resource('/comments', 'commentsController');
+Route::resource('/comments', 'CommentsController');
 Route::get('/comments/{id}/{status}', 'commentsController@edit');
 Route::get('/terms', 'TermsController@index');
 Route::get('/privacy', 'PrivacyController@index');
