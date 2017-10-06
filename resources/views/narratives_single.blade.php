@@ -31,7 +31,7 @@
     </style>
     <div class="container panel" style="padding-left: 75px !important; padding-right: 75px !important;">
         <div class="form-group titleSet">
-            <h2>{{$data['item']->title}}</h2>
+            <h1>{{$data['item']->title}}</h1>
             <span>{{$data['item']->created_at}}</span>
         </div>
         <div class="form-group mb2">
