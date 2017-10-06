@@ -42,7 +42,7 @@
     <div class="form-group mb2">
         {!! $data['item']->contents !!}
     </div>
-    <div id="comments" class="col-md-12 form-group">
+    <div id="comments" class="row col-md-12 form-group">
         <hr>
         <div class="form-group">
             <h3>Comments</h3>
@@ -63,6 +63,9 @@
         </div>
 
         <div class="clearfix"></div>
+        <div class="row">
+
+        </div>
         <div class="row mt4">
             <div class="col-md-8">
                 <form action="/comments" method="POST">
