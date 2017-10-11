@@ -167,40 +167,50 @@
     background-color: #fff;
     margin: 1px;
 }
+
 @media (max-width: 768px) {
-    .video-dimensions{
+    .video-dimensions {
         width: 350px !important;
         margin-bottom: 20px;
     }
-    .pa3{
+
+    .pa3 {
         padding: 0 !important;
     }
-    .logo img{
+
+    .logo img {
         width: 140px;
         padding-left: 20px;
     }
+
     .mw8 {
         width: 23rem !important;
     }
-    #loginBtn{
+
+    #loginBtn {
         padding: 9px;
     }
-    #signupBtn{
+
+    #signupBtn {
         padding: 9px;
     }
-    .min_inBlk{
+
+    .min_inBlk {
         display: inline-block !important;
     }
-    .min_pb18{
+
+    .min_pb18 {
         padding-bottom: 18px;
     }
-    .ptbSet{
+
+    .ptbSet {
         padding-left: 24px !important;
         padding-right: 24px !important;
     }
 
 }
-.slideArrow{
+
+.slideArrow {
     color: #fff;
     z-index: 999999;
     background-color: rgba(255, 119, 52, 0.67);
@@ -209,4 +219,8 @@
     height: 24px;
     padding-top: 1px;
     font-size: 23px !important;
+}
+
+.text-danger {
+    color: red;
 }

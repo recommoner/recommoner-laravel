@@ -1,25 +1,34 @@
 @extends('master')
 @section('content')
+<style>
+    .links {
+        color: #ff6600 !important;
+    }
+</style>
 <div class="narratives-header">
     <h2>
-        <div>Narratives::</div>
+        <div style=" color: #e77223;
+    font-family: -webkit-body;">NARRATIVES ::
+        </div>
         <br>
-        How might we provide comprehensive sexual and reproductive health services to girls and women affected by
-        conflict or disaster?
+        RECOMMONER is an open commoning platform. Join our community by sharing your stories, thoughts and concerns
+        about tenancy. <a class="links"
+                          href="{{url('register')}}">Sign up</a> or <a
+                href="{{url('login')}}" class="links">Login</a>.
     </h2>
 </div>
 <div class="mt3 container pl0">
     <div class="form-group col-md-4 pull-right col-ms-12">
 
-<!--        <select class="form-control">-->
-<!--            <option>All</option>-->
-<!--            <option>Applauds</option>-->
-<!--            <option>Comments</option>-->
-<!--            <option>Newest</option>-->
-<!--            <option>Random</option>-->
-<!--            <option>Recently updated</option>-->
-<!--            <option>Views</option>-->
-<!--        </select>-->
+        <!--        <select class="form-control">-->
+        <!--            <option>All</option>-->
+        <!--            <option>Applauds</option>-->
+        <!--            <option>Comments</option>-->
+        <!--            <option>Newest</option>-->
+        <!--            <option>Random</option>-->
+        <!--            <option>Recently updated</option>-->
+        <!--            <option>Views</option>-->
+        <!--        </select>-->
 
     </div>
     <div class="form-group col-md-12"></div>

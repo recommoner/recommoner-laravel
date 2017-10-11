@@ -5,23 +5,40 @@
     @section('editMethod')
     @show
     <fieldset>
-        <div class="container mt4 mb5 panel pb4">
+        <form id="articleForm" class="container mt4 mb5 panel pb4">
             <div class="row mt4">
                 <div class="col-md-8">
                     <div class="col-md-12 form-group">
                         <label>Title</label>
-                        <input type="text" maxlength="50" required class="form-control" value="@yield('editTitle')"
+                        <input placeholder="Maximum 50 Characters are Allowed" type="text" maxlength="50" required
+                               class="form-control" value="@yield('editTitle'){{ old('title') }}"
                                name="title">
+                        @if ($errors->has('title'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('title') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Description</label>
-                        <textarea name="description" maxlength="200" required class="form-control"
-                                  style="height: 150px">@yield('editDescription')</textarea>
+                        <label>Describe your story in 2-3 lines</label>
+                        <textarea placeholder="Maximum 200 Characters are Allowed" name="description" maxlength="200"
+                                  required class="form-control"
+                                  style="height: 150px">@yield('editDescription'){{ old('description') }}</textarea>
+                        @if ($errors->has('description'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Contents</label>
+                        <label>Please tell us your full Story</label>
                         <textarea id="editor" name="contents" class="form-control"
-                                  style="height: 150px">@yield('editContents')</textarea>
+                                  style="height: 150px">@yield('editContents'){{ old('contents') }}</textarea>
+                        @if ($errors->has('contents'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('contents') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -29,19 +46,25 @@
                         <label>Thumbnail</label>
                         <input type="file" required class="form-control" value="@yield('editThumbnail')"
                                name="thumbnail">
+                        @if ($errors->has('thumbnail'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('thumbnail') }}</strong>
+                        </span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="pull-right">
                         <a href="{{url('articles')}}" class="btn btn-default btn-lg">Cancel</a>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </fieldset>
 </form>
 <script src="{{ url('js/tinymce/tinymce.min.js') }}"></script>
+<!--<script src="{{ url('js/jquery-1.11.0.min.js') }}"></script>-->
 <script>
     tinymce.init({
         selector: "#editor",

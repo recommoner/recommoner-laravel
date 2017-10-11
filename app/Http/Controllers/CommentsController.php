@@ -20,6 +20,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
+        $this->isAdmin();
         $comments = DB::table('comments')->paginate(20);
         return view('comments', compact('comments'));
     }
@@ -31,7 +32,7 @@ class CommentsController extends Controller
      */
     public function create()
     {
-        //
+        $this->isAdmin();
     }
 
     /**
@@ -42,6 +43,7 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->isAdmin();
         $comment = new comment;
         $this->validate($request, [
             'name' => 'required',
@@ -79,6 +81,7 @@ class CommentsController extends Controller
      */
     public function edit($id, $status)
     {
+        $this->isAdmin();
         $comment = comment::find($id);
         $comment->status = $status == 1 ? 0 : 1;
         $comment->save();
@@ -93,8 +96,18 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
+        $this->isAdmin();
         $item = comment::find($id);
         $item->delete();
         return redirect('comments');
+    }
+
+    protected function isAdmin()
+    {
+        $user = Auth::user();
+        if (!$user->admin) {
+            redirect('articles');
+            exit;
+        }
     }
 }

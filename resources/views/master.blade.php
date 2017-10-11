@@ -86,7 +86,7 @@
             <div class="pa3 hPadding19 dt w-100">
                 <div class="dtc w2 min_inBlk v-mid pa1">
                     <a href="/" class="dib w5 logo h2 pv2">
-                        <img src="{{ asset('images/logo-beta.svg') }}">
+                        <img src="{{ asset('images/logo.png') }}">
                     </a>
                 </div>
                 <div id="navlinks" class="dtc tr min_pb18 pt3 ph3">

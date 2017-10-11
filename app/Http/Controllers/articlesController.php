@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\article;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class articlesController extends Controller
 {
@@ -24,11 +23,12 @@ class articlesController extends Controller
     {
         $user = Auth::user();
         $where = [];
-        if ($user->admin === 0) {
+        if (!$user->admin) {
             $where['user'] = $user->id;
         }
-        $articles = article::where($where)->get()->partition(15);
-        return view('articles', compact('articles'));
+        $data['articles'] = article::where($where)->paginate(15);
+        $data['isAdmin'] = $user->admin === 1;
+        return view('articles', compact('data'));
     }
 
     /**
@@ -49,6 +49,7 @@ class articlesController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         $article = new article;
         $this->validate($request, [
             'title' => 'required',
@@ -59,10 +60,11 @@ class articlesController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $path = $request->thumbnail->store('', 'public');
+        $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
         $article->save();
-        return redirect('articles');
+        return redirect('articles?added=1');
     }
 
     /**
@@ -84,7 +86,15 @@ class articlesController extends Controller
      */
     public function edit($id)
     {
-        $item = article::find($id);
+        $user = Auth::user();
+        $where = [];
+        if ($user->admin == 0) {
+            $where['user'] = $user->id;
+        }
+        $item = article::where($where)->find($id);
+        if (!isset($item->id)) {
+            return redirect('articles');
+        }
         return view('edit.edit_article', compact('item'));
     }
 
@@ -111,7 +121,7 @@ class articlesController extends Controller
         }
         $article->contents = $request->contents;
         $article->save();
-        return redirect('articles');
+        return redirect('articles?updated=1');
     }
 
     /**
