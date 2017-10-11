@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\article;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class articlesController extends Controller
@@ -21,7 +22,12 @@ class articlesController extends Controller
      */
     public function index()
     {
-        $articles = DB::table('articles')->paginate(15);
+        $user = Auth::user();
+        $where = [];
+        if ($user->admin === 0) {
+            $where['user'] = $user->id;
+        }
+        $articles = article::where($where)->get()->partition(15);
         return view('articles', compact('articles'));
     }
 

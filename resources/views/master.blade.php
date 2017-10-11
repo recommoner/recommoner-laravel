@@ -78,8 +78,6 @@
             background-color: #e8e2dc;
         }
     </style>
-
-
 </head>
 <body>
 <main id="wrapper">
