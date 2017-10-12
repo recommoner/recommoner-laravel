@@ -60,6 +60,10 @@ class articlesController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $path = $request->thumbnail->store('', 'public');
+
+        // crop the image as thumbnail
+        $this->createThumbnail(public_path($path), $path, 250, 250);
+        
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
@@ -117,6 +121,7 @@ class articlesController extends Controller
         $article->description = $request->description;
         if ($request->thumbnail) {
             $path = $request->thumbnail->store('', 'public');
+            $this->createThumbnail(public_path($path), $path, 250, 250);
             $article->thumbnail = $path;
         }
         $article->contents = $request->contents;
@@ -135,5 +140,73 @@ class articlesController extends Controller
         $item = article::find($id);
         $item->delete();
         return redirect('articles');
+    }
+
+    protected function createThumbnail($src, $filename, $thumb_width, $thumb_height)
+    {
+        $_imageType = getimagesize($src);
+        $image = "";
+        $imageType = $_imageType['mime'];
+        switch ($imageType) {
+            case "image/gif":
+                $image = imagecreatefromgif($src);
+                break;
+            case "image/pjpeg":
+            case "image/jpeg":
+            case "image/jpg":
+                $image = imagecreatefromjpeg($src);
+                break;
+            case "image/png":
+            case "image/x-png":
+                $image = imagecreatefrompng($src);
+                break;
+        }
+
+        $width = imagesx($image);
+        $height = imagesy($image);
+        $original_aspect = $width / $height;
+        $thumb_aspect = $thumb_width / $thumb_height;
+        if ($original_aspect >= $thumb_aspect) {
+            // If image is wider than thumbnail (in aspect ratio sense)
+            $new_height = $thumb_height;
+            $new_width = $width / ($height / $thumb_height);
+        } else {
+            // If the thumbnail is wider than the image
+            $new_width = $thumb_width;
+            $new_height = $height / ($width / $thumb_width);
+        }
+        $thumb = imagecreatetruecolor($thumb_width, $thumb_height);
+        // Resize and crop
+        imagecopyresampled($thumb,
+            $image,
+            0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+            0 - ($new_height - $thumb_height) / 2, // Center the image vertically
+            0, 0,
+            $new_width, $new_height,
+            $width, $height);
+        $cropped = false;
+        switch ($imageType) {
+            case "image/png":
+            case "image/x-png":
+                $image_Quality = intval(80 / 10);
+                $image_Quality = $image_Quality == 10 ? 9 : $image_Quality;
+                imagepng($thumb, $filename, $image_Quality);
+                $cropped = true;
+                break;
+            case "image/pjpeg":
+            case "image/jpeg":
+            case "image/jpg":
+                imagejpeg($thumb, $filename, 80);
+                $cropped = true;
+                break;
+            case 'image/gif':
+                imagegif($thumb, $filename);
+                $cropped = true;
+                break;
+            default:
+                $cropped = false;
+        }
+        $r = imagejpeg($thumb, $filename, 80);
+        return $cropped;
     }
 }
