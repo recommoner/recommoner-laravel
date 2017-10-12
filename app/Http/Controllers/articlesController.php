@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\article;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
+use App\User;
 class articlesController extends Controller
 {
 
@@ -63,6 +64,7 @@ class articlesController extends Controller
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
+        Mail::send(['user' => $user], function ($user) {});
         $article->save();
         return redirect('articles?added=1');
     }

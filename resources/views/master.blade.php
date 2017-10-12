@@ -96,7 +96,7 @@
                        target="_blank">Blog</a>
 
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3"
-                       href="{{ url('download') }}">Download</a>
+                       href="{{ url('downloads') }}">Download</a>
                     @if (Auth::guest())
                         <a id="loginBtn"
                            class="f7 hover-orange no-underline white dib ml2 pv2 ph4 ba br2 mr2 mr3-ns grow"
