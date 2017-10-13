@@ -8,7 +8,7 @@
 <div class="narratives-header">
     <h2>
         <div style=" color: #e77223;
-    font-family: -webkit-body;">NARRATIVES ::
+    font-family:  san serif light;">NARRATIVES ::
         </div>
         <br>
         RECOMMONER is an open commoning platform. Join our community by sharing your stories, thoughts and concerns
