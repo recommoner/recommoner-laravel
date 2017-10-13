@@ -31,15 +31,15 @@
                         @endif
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Please tell us your full Story</label>
+                        <label style="display: block">Please tell us your full Story</label>
                         <textarea id="editor" name="contents" class="form-control"
                                   style="height: 150px">@yield('editContents'){{ old('contents') }}</textarea>
-                        @if ($errors->has('contents'))
-                        <span class="help-block">
+                    </div>
+                    @if ($errors->has('contents'))
+                    <span class="help-block">
                                             <strong>{{ $errors->first('contents') }}</strong>
                                         </span>
-                        @endif
-                    </div>
+                    @endif
                 </div>
                 <div class="col-md-4">
                     <div class="col-md-12 form-group">
@@ -64,8 +64,13 @@
     </fieldset>
 </form>
 <script src="{{ url('js/tinymce/tinymce.min.js') }}"></script>
-<!--<script src="{{ url('js/jquery-1.11.0.min.js') }}"></script>-->
 <script>
+    $(document).ready(function () {
+        $('#articleForm').on('submit', function (e) {
+            $('#submit').attr('disabled', 'disabled').text('Please Wait..');
+        });
+    });
+
     tinymce.init({
         selector: "#editor",
         skin: 'lightgray',

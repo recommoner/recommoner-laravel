@@ -5,7 +5,7 @@
 @section('editContents',$item->contents)
 @section('editDescription',$item->description)
 @section('content')
-<form action="{{url('articles/'.$item->id.'')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('articles/'.$item->id.'')}}" id="articleForm" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     {{method_field('PUT')}}
     <fieldset>
@@ -16,16 +16,31 @@
                         <label>Title</label>
                         <input type="text" required maxlength="50" class="form-control" value="@yield('editTitle')"
                                name="title">
+                        @if ($errors->has('title'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('title') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Description</label>
+                        <label>Describe your story in 2-3 lines</label>
                         <textarea required maxlength="200" name="description" class="form-control"
                                   style="height: 150px">@yield('editDescription')</textarea>
+                        @if ($errors->has('description'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Contents</label>
+                        <label>Please tell us your full Story</label>
                         <textarea required id="editor" name="contents" class="form-control"
                                   style="height: 150px">@yield('editContents')</textarea>
+                        @if ($errors->has('contents'))
+                        <span class="help-block">
+                                            <strong>{{ $errors->first('contents') }}</strong>
+                                        </span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-4 form-group">
@@ -40,13 +55,17 @@
                     <div class="form-group fileType">
                         <input type="file" class="form-control" value="@yield('editThumbnail')"
                                name="thumbnail">
-
+                        @if ($errors->has('thumbnail'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('thumbnail') }}</strong>
+                        </span>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="pull-right">
                         <a href="{{url('articles')}}" class="btn btn-default btn-lg">Cancel</a>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                 </div>
             </div>
@@ -55,6 +74,11 @@
 </form>
 <script src="{{ url('js/tinymce/tinymce.min.js') }}"></script>
 <script>
+    $(document).ready(function () {
+        $('#articleForm').on('submit', function (e) {
+            $('#submit').attr('disabled', 'disabled').text('Please Wait..');
+        });
+    });
     tinymce.init({
         selector: "#editor",
         skin: 'lightgray',

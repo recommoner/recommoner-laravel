@@ -12,9 +12,12 @@
         </div>
         <br>
         RECOMMONER is an open commoning platform. Join our community by sharing your stories, thoughts and concerns
-        about tenancy. <a class="links"
-                          href="{{url('register')}}">Sign up</a> or <a
-                href="{{url('login')}}" class="links">Login</a>.
+        about tenancy.
+        @if (Auth::guest())
+        <a class="links"
+           href="{{ url('register')}}">Sign up</a> or <a
+                href="{{ url('login')}}" class="links">Login</a>.
+        @endif
     </h2>
 </div>
 <div class="mt3 container pl0">
