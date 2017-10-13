@@ -46,5 +46,10 @@
         </a>
     </div>
     @endforeach
+
+    <div class="col-md-12 text-center mt4" style="margin-bottom: 30px">
+        <?php echo $articles->render(); ?>
+    </div>
+
 </div>
 @endsection

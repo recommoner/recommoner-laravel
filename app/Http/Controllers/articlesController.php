@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EmailNotification;
 use Illuminate\Http\Request;
 use App\article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use App\User;
 
 class articlesController extends Controller
 {
@@ -67,9 +67,8 @@ class articlesController extends Controller
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
-        Mail::send(['user' => $user], function ($user) {
-        });
         $article->save();
+        Mail::to(env('NOTIFICATION_SEND_TO'))->send(new EmailNotification(['name' => $user['name'], 'title' => $article->title, 'id' => $article->id]));
         return redirect('articles?added=1');
     }
 
@@ -212,5 +211,15 @@ class articlesController extends Controller
         }
         $r = imagejpeg($thumb, $filename, 80);
         return $cropped;
+    }
+
+    public function approve($id)
+    {
+        $article = article::find($id);
+        if (isset($article['id'])) {
+            $article->status = 1;
+            $article->save();
+        }
+        return redirect('/narratives');
     }
 }

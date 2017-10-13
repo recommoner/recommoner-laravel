@@ -18,7 +18,7 @@ class NarrativesController extends Controller
      */
     public function index()
     {
-        $articles = article::all();
+        $articles = article::where(['status' => 1])->paginate(9);
         return view('narratives', compact('articles'));
     }
 
@@ -52,7 +52,7 @@ class NarrativesController extends Controller
     public function show($id)
     {
         $item = article::find($id);
-        $comments = comment::where(['post' => $id, 'status' => 1])->get();
+        $comments = comment::where(['post' => $id, 'status' => 1])->paginate(15);
         $data['item'] = $item;
         $data['comments'] = $comments;
         return view('narratives_single', compact('data'));

@@ -20,7 +20,7 @@ class CommentsTable extends Migration
                 $table->string('email');
                 $table->text('comment');
                 $table->integer('post');
-                $table->integer('status');
+                $table->integer('status')->default(0);
                 $table->timestamps();
             });
         }

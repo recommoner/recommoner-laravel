@@ -23,3 +23,4 @@ Route::get('/comments/{id}/{status}', 'commentsController@edit');
 Route::get('/terms', 'TermsController@index');
 Route::get('/privacy', 'PrivacyController@index');
 Route::get('/send/test', 'MailController@send');
+Route::get('/articles/approve/{id}', 'articlesController@approve');

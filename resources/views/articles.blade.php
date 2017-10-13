@@ -8,7 +8,7 @@
     background-color: #f67635;">
             <?php
             if (isset($_GET['added'])) {
-                echo 'Article Added Successfully';
+                echo 'Article Added Successfully. Will be published after review';
             }
 
             if (isset($_GET['updated'])) {
@@ -39,8 +39,9 @@
                 <thead>
                 <tr>
                     <th width="22%">Title</th>
-                    <th width="40%">Description</th>
+                    <th width="35%">Description</th>
                     <th width="20%">Created On</th>
+                    <th width="10%">Status</th>
                     <th width="20%">Action</th>
                 </tr>
                 </thead>
@@ -50,6 +51,7 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->description}}</td>
                     <td>{{$post->created_at}}</td>
+                    <td>{{$post->status ? 'Published' : 'Pending'}}</td>
                     <td>
                         <a href="{{url('/articles/'.$post->id.'/edit')}}" class="btn btn-info">Edit</a>
                         <form style="display: inline-block;" action="{{'/articles/'.$post->id}}" method="post">
