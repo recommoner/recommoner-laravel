@@ -18,21 +18,11 @@
     </h2>
 </div>
 <div class="mt3 container pl0">
-    <div class="form-group col-md-4 pull-right col-ms-12">
-
-        <!--        <select class="form-control">-->
-        <!--            <option>All</option>-->
-        <!--            <option>Applauds</option>-->
-        <!--            <option>Comments</option>-->
-        <!--            <option>Newest</option>-->
-        <!--            <option>Random</option>-->
-        <!--            <option>Recently updated</option>-->
-        <!--            <option>Views</option>-->
-        <!--        </select>-->
-
-    </div>
     <div class="form-group col-md-12"></div>
     <div class="clearfix"></div>
+    <?php if (count($articles) == 0) { ?>
+        <h3 style="text-align: center; color: #bf2511">Not any article uploaded yet</h3>
+    <?php } ?>
     @foreach($articles as $post)
     <div class="panel mb4 col-md-4 p0 ml4 disply maxHeight483">
         <a href="{{url('/narratives/'.$post->id.'')}}">
