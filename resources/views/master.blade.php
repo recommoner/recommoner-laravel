@@ -92,8 +92,15 @@
                 </div>
                 <div id="navlinks" class="dtc tr min_pb18 pt3 ph3">
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ url('narratives') }}">Narratives</a>
-                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ url('articles') }}">Tell Us
+                    @if (Auth::guest())
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ url('register') }}">Tell Us
                         Your Story</a>
+                    @endif
+                    @if (!Auth::guest())
+                    <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="{{ url('articles/create') }}">Tell
+                        Us
+                        Your Story</a>
+                    @endif
                     <a class="f7 hover-orange no-underline white dn dib-l pv2 ph3" href="http://recommoning.com"
                        target="_blank">Blog</a>
 
