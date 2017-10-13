@@ -62,7 +62,7 @@
             </div>
             <div class="dtc v-mid pl3 pv2 bulletpoint">
                     <span class="f6"><span class="title f5 b small-caps">Toolkit</span> Prompts & principles for challenge negotiations.<br><a
-                                href="{{url('download')}}" class="link orange dim">Check out the toolkit</a></span>
+                                href="{{url('downloads')}}" class="link orange dim">Check out the toolkit</a></span>
             </div>
         </article>
 
