@@ -54,7 +54,7 @@
                     <td>{{$post->status ? 'Published' : 'Pending'}}</td>
                     <td>
                         <a href="{{url('/articles/'.$post->id.'/edit')}}" class="btn btn-info">Edit</a>
-                        <form style="display: inline-block;" action="{{'/articles/'.$post->id}}" method="post">
+                        <form style="display: inline-block;" action="{{url('/articles/'.$post->id)}}" method="post">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
                             <button type="submit" class="btn btn-danger">Delete</button>
