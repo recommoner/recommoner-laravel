@@ -67,8 +67,9 @@ class articlesController extends Controller
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
-        $article->save();
-        Mail::to(env('NOTIFICATION_SEND_TO'))->send(new EmailNotification(['name' => $user['name'], 'title' => $article->title, 'id' => $article->id]));
+        if ($article->save()) {
+            Mail::to(env('NOTIFICATION_SEND_TO'))->send(new EmailNotification(['name' => $user['name'], 'title' => $article->title, 'id' => $article->id]));
+        }
         return redirect('articles?added=1');
     }
 

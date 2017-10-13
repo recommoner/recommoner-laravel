@@ -16,14 +16,14 @@ class CreateDownloadsTable extends Migration
         if (!Schema::hasTable('downloads')) {
             Schema::create('downloads', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('name');
-                $table->string('email');
-                $table->string('profession_affiliation');
-                $table->string('how_did_rec');
-                $table->string('community');
-                $table->string('business');
-                $table->string('classroom');
-                $table->string('research');
+                $table->string('name')->nullable();
+                $table->string('email')->nullable();
+                $table->string('profession_affiliation')->nullable();
+                $table->string('how_did_rec')->nullable();
+                $table->string('community')->nullable();
+                $table->string('business')->nullable();
+                $table->string('classroom')->nullable();
+                $table->string('research')->nullable();
                 $table->timestamps();
             });
         }
