@@ -7,6 +7,7 @@ use App\article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\User;
+
 class articlesController extends Controller
 {
 
@@ -61,14 +62,13 @@ class articlesController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $path = $request->thumbnail->store('', 'public');
-
         // crop the image as thumbnail
-        $this->createThumbnail(public_path($path), $path, 250, 250);
-        
+        $this->createThumbnail($path, 465, 542);
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
-        Mail::send(['user' => $user], function ($user) {});
+        Mail::send(['user' => $user], function ($user) {
+        });
         $article->save();
         return redirect('articles?added=1');
     }
@@ -123,8 +123,8 @@ class articlesController extends Controller
         $article->description = $request->description;
         if ($request->thumbnail) {
             $path = $request->thumbnail->store('', 'public');
-            $this->createThumbnail(public_path($path), $path, 250, 250);
             $article->thumbnail = $path;
+            $this->createThumbnail($path, 465, 542);
         }
         $article->contents = $request->contents;
         $article->save();
@@ -144,8 +144,10 @@ class articlesController extends Controller
         return redirect('articles');
     }
 
-    protected function createThumbnail($src, $filename, $thumb_width, $thumb_height)
+    protected function createThumbnail($src, $thumb_width, $thumb_height)
     {
+        $filename = public_path('uploads/' . $src);
+        $src = public_path('uploads/' . $src);
         $_imageType = getimagesize($src);
         $image = "";
         $imageType = $_imageType['mime'];
