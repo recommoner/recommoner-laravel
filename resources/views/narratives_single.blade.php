@@ -68,7 +68,7 @@
         </div>
         <div class="row mt4">
             <div class="col-md-8">
-                <form action="/comments" method="POST">
+                <form action="{{url('comments/')}}" method="POST">
                     {{csrf_field()}}
                     <div class="col-md-6 form-group">
                         <label>Name</label>
