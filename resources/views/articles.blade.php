@@ -70,7 +70,7 @@
                     @endforeach
                     <?php if (count($data['articles']) === 0) { ?>
                     <tr>
-                        <td colspan="4">
+                        <td colspan="5">
                             <div class="text-center mt4 text-danger">No Record Found</div>
                         </td>
                     </tr>
