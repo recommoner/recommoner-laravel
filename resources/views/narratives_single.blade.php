@@ -34,7 +34,7 @@
         padding-bottom: 0px !important;
     }
 </style>
-<div class="container panel" style="padding-left: 75px !important; padding-right: 75px !important;">
+<div class="container panel mt5 mb5" style="padding-left: 75px !important; padding-right: 75px !important;">
     <div class="form-group titleSet">
         <h1>{{$data['item']->title}}</h1>
         <span>{{$data['item']->created_at}}</span>
@@ -47,7 +47,6 @@
         <div class="form-group">
             <h3>Comments</h3>
         </div>
-        <hr>
         <div class="row">
             @foreach($data['comments'] as $post)
             <div class="col-md-12 form-group commentList">

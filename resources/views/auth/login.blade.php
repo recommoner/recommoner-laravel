@@ -44,11 +44,14 @@
                                     </span>
                                     @endif
                                 </div>
-                                <div class="form-group col-md-12" style="margin-top: 15px">
+                                <div class="col-md-12" style="margin-top: 15px">
                                     <button id="exploreBtn" type="submit"
                                             class="btn full-btn btn-primary">
                                         Login
                                     </button>
+                                </div>
+                                <div class="col-md-12" style="margin-top: 15px">
+                                    <p>Don't have a account <a style="color: #FF7734" href="{{ url('register') }}">register</a></p>
                                 </div>
 
                             </form>

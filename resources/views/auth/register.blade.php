@@ -55,12 +55,14 @@
                                            name="password_confirmation" required>
                                 </div>
 
-                                <div class="form-group">
+                                <div>
 
-                                    <button id="exploreBtn" type="submit" class="btn mb2 full-btn btn-primary">
+                                    <button id="exploreBtn" type="submit" class="btn full-btn btn-primary">
                                         Register
                                     </button>
-
+                                </div>
+                                <div class="form-group col-md-12" style="margin-top: 15px">
+                                    <p>Already have a account <a style="color: #FF7734" href="{{ url('login') }}">login</a></p>
                                 </div>
                             </form>
                         </div>
