@@ -53,6 +53,7 @@
                         @endif
                     </div>
                 </div>
+                <input type="text" name="status" hidden value="0">
                 <div class="col-md-12">
                     <div class="pull-right">
                         <a href="{{url('articles')}}" class="btn btn-default btn-lg">Cancel</a>

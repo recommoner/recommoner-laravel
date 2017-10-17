@@ -61,12 +61,12 @@ class articlesController extends Controller
         ]);
         $article->title = $request->title;
         $article->description = $request->description;
+        $article->status = $request->status;
         $path = $request->thumbnail->store('', 'public');
         // crop the image as thumbnail
         $this->createThumbnail($path, 465, 542);
         $article->user = $user->id;
         $article->thumbnail = $path;
-        $article->status = 1;
         $article->contents = $request->contents;
         $article->save();
 //        if ($article->save()) {
@@ -216,13 +216,21 @@ class articlesController extends Controller
         return $cropped;
     }
 
-    public function approve($id)
+    public function approve($id, $status)
     {
+        $this->isAdmin();
         $article = article::find($id);
-        if (isset($article['id'])) {
-            $article->status = 1;
-            $article->save();
+        $article->status = $status == 1 ? 0 : 1;
+        $article->save();
+        return redirect('/articles');
+    }
+
+    protected function isAdmin()
+    {
+        $user = Auth::user();
+        if (!$user->admin) {
+            redirect('articles');
+            exit;
         }
-        return redirect('/narratives');
     }
 }
