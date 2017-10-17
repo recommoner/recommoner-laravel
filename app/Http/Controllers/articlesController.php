@@ -66,6 +66,7 @@ class articlesController extends Controller
         $this->createThumbnail($path, 465, 542);
         $article->user = $user->id;
         $article->thumbnail = $path;
+        $article->status = 1;
         $article->contents = $request->contents;
         $article->save();
 //        if ($article->save()) {
