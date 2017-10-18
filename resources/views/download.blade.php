@@ -7,7 +7,8 @@
                 Resources</h1>
             <article class="cf">
                 <div class="fl w-100 w-50-ns">
-                    <form class="pa2 black-80" action="/downloads" method="POST" enctype="multipart/form-data">
+                    <form class="pa2 black-80" action="{{url('downloads')}}" method="POST"
+                          enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="center">
                             <input name="name" required class="input-reset ba b--black-20 br2 pa2 mb3 db w-100"

@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
 <style>
     .links {
         color: #ff6600 !important;
@@ -7,8 +8,7 @@
 </style>
 <div class="narratives-header">
     <h2>
-        <div style=" color: #e77223;
-    font-family:  'Open Sans', sans-serif;">NARRATIVES ::
+        <div style=" color: #e77223; font-family: 'Source Sans Pro', sans-serif;">NARRATIVES ::
         </div>
         <br>
         RECOMMONER is an open commoning platform. Join our community by sharing your stories, thoughts and concerns
