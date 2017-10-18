@@ -50,6 +50,10 @@
                                         Login
                                     </button>
                                 </div>
+                                <div class="col-md-12 mt3">
+                                    {!! Recaptcha::render() !!}
+                                </div>
+
                                 <div class="col-md-12" style="margin-top: 15px">
                                     <p>Don't have a account <a style="color: #FF7734" href="{{ url('register') }}">register</a></p>
                                 </div>
