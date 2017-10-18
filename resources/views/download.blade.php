@@ -71,7 +71,7 @@
                             <button type="submit" class="f5 btn btn-full near-white tc pt2 pb2 bg-blue ">Submit
                             </button>
                             <div class="col-md-12 mt3">
-                                {!! Recaptcha::render() !!}
+<!--                                {!! Recaptcha::render() !!}-->
                             </div>
                         </div>
                     </form>
