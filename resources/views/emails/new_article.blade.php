@@ -45,7 +45,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;background-color: #ff6600;border-radius: 5px;text-align: center;">
-                                                                <a href="{{url('articles/approve/'.$id)}}"
+                                                                <a href="{{url('articles/'.$id . '/0')}}"
                                                                    target="_blank"
                                                                    style="color: #ffffff;text-decoration: none;background-color: #ff6600;border: solid 1px #ff6600;border-radius: 5px;box-sizing: border-box;cursor: pointer;display: inline-block;font-size: 16px !important;font-weight: bold;margin: 0;padding: 12px 25px;text-transform: capitalize;border-color: #ff6600;width: 100% !important;">Click
                                                                     to Approve</a></td>
