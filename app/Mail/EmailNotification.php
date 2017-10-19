@@ -30,7 +30,7 @@ class EmailNotification extends Mailable
     public function build()
     {
         $subject = 'New Article Submitted';
-        $address = env('MAIL_FROM_ADDRESS');
+        $address = env('MAIL_FROM_ADDRESS', 'sameer.ali@lokpunjab.org');
         $name = env('MAIL_FROM_NAME');
 
         return $this->view('emails.new_article')
