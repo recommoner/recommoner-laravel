@@ -18,7 +18,7 @@ class NarrativesController extends Controller
      */
     public function index()
     {
-        $articles = article::where(['status' => 1])->paginate(9);
+        $articles = article::where(['status' => 1])->orderBy('id', 'desc')->paginate(9);
         return view('narratives', compact('articles'));
     }
 

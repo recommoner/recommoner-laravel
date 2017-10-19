@@ -28,7 +28,7 @@ class articlesController extends Controller
         if (!$user->admin) {
             $where['user'] = $user->id;
         }
-        $data['articles'] = article::where($where)->paginate(15);
+        $data['articles'] = article::where($where)->orderBy('id', 'desc')->paginate(15);
         $data['isAdmin'] = $user->admin === 1;
         return view('articles', compact('data'));
     }
@@ -219,11 +219,11 @@ class articlesController extends Controller
     {
         $user = Auth::user();
         if (!$user->admin) {
-            return 'You have to login under Admin account to approve this article';
+            return redirect('narratives');
         }
         $article = article::find($id);
         $article->status = $status === 1 ? 0 : 1;
         $article->save();
-        return 'Article Published Successfully';
+        return redirect('narratives');
     }
 }
