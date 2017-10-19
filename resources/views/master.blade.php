@@ -23,6 +23,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript" src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ URL::to('images/favicon.png') }}"/>
     <script>
         asset_url = '<?php echo asset('') ?>'
     </script>
