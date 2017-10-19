@@ -24,9 +24,11 @@
 <div class="mt3 container pl0">
     <div class="form-group col-md-12"></div>
     <div class="clearfix"></div>
-    <?php if (count($articles) == 0) { ?>
-        <h3 style="text-align: center; color: #bf2511">Not any article uploaded yet</h3>
-    <?php } ?>
+
+    @if (count($articles) == 0)
+    <h3 style="text-align: center; color: #bf2511">Not any article uploaded yet</h3>
+    @endif
+
     @foreach($articles as $post)
     <div class="panel mb4 col-md-4 p0 ml4 disply maxHeight483">
         <a href="{{url('/narratives/'.$post->id.'')}}">
