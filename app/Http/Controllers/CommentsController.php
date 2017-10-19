@@ -22,7 +22,7 @@ class CommentsController extends Controller
     public function index()
     {
         $this->isAdmin();
-        $comments = DB::table('comments')->paginate(20);
+        $comments = DB::table('comments')->orderBy('id', 'desc')->paginate(20);
         return view('comments', compact('comments'));
     }
 
