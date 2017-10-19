@@ -57,6 +57,10 @@
                                 <div class="col-md-12" style="margin-top: 15px">
                                     <p>Don't have a account <a style="color: #FF7734" href="{{ url('register') }}">register</a></p>
                                 </div>
+                                <div class="col-md-12" style="margin-top: 15px">
+                                    <p> <a class="pull-right" style="color: #FF7734" href="{{ url('password/reset') }}">Forget Password</a></p>
+                                </div>
+
 
                             </form>
                         </div>
