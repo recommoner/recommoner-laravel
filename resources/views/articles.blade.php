@@ -48,7 +48,7 @@
                 <tbody>
                 @foreach($data['articles'] as $post)
                 <tr>
-                    <td>{{$post->title}}</td>
+                    <td><a href="{{url('narratives/'. $post->id)}}">{{$post->title}}</a></td>
                     <td>{{$post->description}}</td>
                     <td>{{$post->created_at}}</td>
                     <td>{{$post->status ? 'Published' : 'Pending'}}</td>
