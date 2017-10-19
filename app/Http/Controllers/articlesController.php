@@ -218,18 +218,18 @@ class articlesController extends Controller
     public function approve($id, $status)
     {
         $this->isAdmin();
+        $user = Auth::user();
+        if (!$user->admin) {
+            return redirect('/articles');
+        }
         $article = article::find($id);
-        $article->status = $status == 1 ? 0 : 1;
+        $article->status = $status === 1 ? 0 : 1;
         $article->save();
-        return redirect('/articles');
+        return 'Article Published Successfully';
     }
 
     protected function isAdmin()
     {
-        $user = Auth::user();
-        if (!$user->admin) {
-            redirect('articles');
-            exit;
-        }
+
     }
 }
