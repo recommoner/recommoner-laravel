@@ -217,7 +217,6 @@ class articlesController extends Controller
 
     public function approve($id, $status)
     {
-        $this->isAdmin();
         $user = Auth::user();
         if (!$user->admin) {
             return 'You have to login under Admin account to approve this article';
