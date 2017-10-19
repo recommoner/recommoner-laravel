@@ -1,16 +1,19 @@
 @extends('master')
 
 @section('content')
+<div class="loginForm"
+     style="background-image: url(http://www.goodwp.com/images/201411/goodwp.com_31995.jpg); background-repeat: no-repeat;background-size: 100% 100%">
     <div class="container">
         <div class="row">
             <div class="mw8 w-31 mt5 center ph2 ph3-ns pv4 mb5 brdr3 bg-white">
                 <div class="panel panel-default">
-                    <h3 class="text-center loginName">Send Email</h3>
+                    <h3 class="text-center loginName">Forgot Password</h3>
+                    <p>We will send you an email to reset the password</p>
                     <div class="panel-body mt4">
                         @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
                         @endif
 
                         <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
@@ -22,7 +25,7 @@
                                        value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
+                                <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -36,7 +39,7 @@
                                 </button>
                             </div>
                             <div class="col-md-12" style="margin-top: 15px">
-                                <p> <a class="pull-right" style="color: #FF7734" href="{{ url('login') }}">Login</a></p>
+                                <p><a class="pull-right" style="color: #FF7734" href="{{ url('login') }}">Login</a></p>
                             </div>
                         </form>
                     </div>
@@ -44,4 +47,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

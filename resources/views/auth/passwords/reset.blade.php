@@ -1,6 +1,8 @@
 @extends('master')
 
 @section('content')
+<div class="loginForm"
+     style="background-image: url(http://www.goodwp.com/images/201411/goodwp.com_31995.jpg); background-repeat: no-repeat;background-size: 100% 100%">
     <div class="container">
         <div class="row">
             <div class="mw8 w-31 mt5 center ph2 ph3-ns pv4 mb5 brdr3 bg-white">
@@ -16,7 +18,7 @@
                                        value="{{ $email or old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
+                                <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -26,7 +28,7 @@
                                 <label>Password</label>
                                 <input id="password" type="password" class="form-control" name="password" required>
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
+                                <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -38,7 +40,7 @@
                                        name="password_confirmation" required>
 
                                 @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
+                                <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif
@@ -55,4 +57,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

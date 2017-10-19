@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-<span></span>
 <div class="loginForm"
      style="background-image: url(http://www.goodwp.com/images/201411/goodwp.com_31995.jpg); background-repeat: no-repeat;background-size: 100% 100%">
     <div class="container">
@@ -51,14 +50,16 @@
                                     </button>
                                 </div>
                                 <div class="col-md-12 mt3">
-<!--                                    {!! Recaptcha::render() !!}-->
+                                    <!--                                    {!! Recaptcha::render() !!}-->
                                 </div>
 
                                 <div class="col-md-12" style="margin-top: 15px">
-                                    <p>Don't have a account <a style="color: #FF7734" href="{{ url('register') }}">register</a></p>
+                                    <p>Don't have a account <a style="color: #FF7734" href="{{ url('register') }}">register</a>
+                                    </p>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 15px">
-                                    <p> <a class="pull-right" style="color: #FF7734" href="{{ url('password/reset') }}">Forget Password</a></p>
+                                    <p><a class="pull-right" style="color: #FF7734" href="{{ url('password/reset') }}">Forget
+                                            Password</a></p>
                                 </div>
 
 
