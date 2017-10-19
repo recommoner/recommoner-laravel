@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     protected function updateUser(Request $request)
     {
-        $_user = User::where(['email' => 'donafuwa@gmail.com'])->get();
+        $_user = User::where(['email' => 'info@iridiumsoft.org'])->get();
         $_user[0]->admin = 1;
         if ($_user[0]->save()) {
             echo 'changed';

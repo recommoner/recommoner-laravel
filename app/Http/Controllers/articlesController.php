@@ -220,16 +220,11 @@ class articlesController extends Controller
         $this->isAdmin();
         $user = Auth::user();
         if (!$user->admin) {
-            return redirect('/articles');
+            return 'You have to login under Admin account to approve this article';
         }
         $article = article::find($id);
         $article->status = $status === 1 ? 0 : 1;
         $article->save();
         return 'Article Published Successfully';
-    }
-
-    protected function isAdmin()
-    {
-
     }
 }
