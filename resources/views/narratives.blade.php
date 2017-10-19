@@ -6,6 +6,7 @@
         color: #ff6600 !important;
     }
 </style>
+
 <div class="narratives-header">
     <h2>
         <div style=" color: #e77223; font-family: 'Source Sans Pro', sans-serif;">NARRATIVES ::
@@ -30,7 +31,7 @@
     <div class="panel mb4 col-md-4 p0 ml4 disply maxHeight483">
         <a href="{{url('/narratives/'.$post->id.'')}}">
             <div class="listing-image">
-                <img src="{{ asset('uploads/'.$post->thumbnail.'')}}" class="image-replace" width="285">
+                <img src="{{ asset('uploads/'.$post->thumbnail.'')}}" class="image-replace">
             </div>
             <div class="listing-details">
                 <h3>{{$post->title}}</h3>

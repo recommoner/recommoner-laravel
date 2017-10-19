@@ -51,7 +51,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-12 mt3">
-                                    {!! Recaptcha::render() !!}
+<!--                                    {!! Recaptcha::render() !!}-->
                                 </div>
 
                                 <div class="col-md-12" style="margin-top: 15px">
