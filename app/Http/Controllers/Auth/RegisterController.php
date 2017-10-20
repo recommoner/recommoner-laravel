@@ -36,6 +36,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = isset($_GET['redirect']) ? $_GET['redirect'] : '/articles';
         $this->middleware('guest');
     }
 

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Mail;
 class articlesController extends Controller
 {
 
+    protected $height = 684;
+    protected $width = 513;
+
     function __construct()
     {
         $this->middleware('auth');
@@ -65,7 +68,7 @@ class articlesController extends Controller
         $path = $request->thumbnail->store('', 'public');
 
         // crop the image as thumbnail
-        $this->createThumbnail($path, 350, 200);
+        $this->createThumbnail($path);
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
@@ -133,7 +136,7 @@ class articlesController extends Controller
             $path = $request->thumbnail->store('', 'public');
 
             // crop the image as thumbnail
-            $this->createThumbnail($path, 350, 200);
+            $this->createThumbnail($path);
 
             $article->thumbnail = $path;
         }
@@ -155,8 +158,10 @@ class articlesController extends Controller
         return redirect('articles');
     }
 
-    protected function createThumbnail($src, $thumb_width, $thumb_height)
+    protected function createThumbnail($src)
     {
+        $thumb_width = $this->width;
+        $thumb_height = $this->height;
         $filename = public_path('uploads/' . $src);
         $src = public_path('uploads/' . $src);
         $_imageType = getimagesize($src);
