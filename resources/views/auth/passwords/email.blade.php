@@ -12,7 +12,7 @@
                     <div class="panel-body mt4">
                         @if (session('status'))
                         <div class="alert alert-success" style="color: green; margin-bottom: 20px">
-                            We have emailed your password resend link.
+                            We have emailed your password reset link.
                         </div>
                         @endif
 
