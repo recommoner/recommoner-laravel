@@ -68,7 +68,7 @@ class articlesController extends Controller
         $this->duplicateImage($path);
 
         // crop the image as thumbnail
-        $this->createThumbnail($path, 465, 542);
+        $this->createThumbnail($path, 368, 245);
         $article->user = $user->id;
         $article->thumbnail = $path;
         $article->contents = $request->contents;
@@ -134,8 +134,13 @@ class articlesController extends Controller
         $article->description = $request->description;
         if ($request->thumbnail) {
             $path = $request->thumbnail->store('', 'public');
+            // copy it before creating a thumbnail
+            $this->duplicateImage($path);
+
+            // crop the image as thumbnail
+            $this->createThumbnail($path, 368, 245);
+
             $article->thumbnail = $path;
-            $this->createThumbnail($path, 465, 542);
         }
         $article->contents = $request->contents;
         $article->save();
