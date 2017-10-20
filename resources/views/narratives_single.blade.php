@@ -52,7 +52,7 @@
         <div class="form-group">
             <h3>Comments</h3>
             @if (Auth::guest())
-            <p>Please <a href="{{url('login')}}">sign in</a> or <a href="{{url('register')}}">create an account</a> to
+            <p>Please <a href="{{url('login?redirect='.Request::path())}}">sign in</a> or <a href="{{url('register?redirect='.Request::path())}}">create an account</a> to
                 post a comment</p>
             @endif
 
