@@ -25,8 +25,6 @@
     }
 
     img {
-        padding-top: 10px;
-        padding-bottom: 18px;
         max-width: 100%;
     }
 
