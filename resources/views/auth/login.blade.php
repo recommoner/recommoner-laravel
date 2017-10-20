@@ -61,8 +61,9 @@
                                     <p><a class="pull-right" style="color: #FF7734" href="{{ url('password/reset') }}">Forget
                                             Password</a></p>
                                 </div>
-
-
+                                @ if(isset($_GET['redirect']))
+                                <input type="hidden" name="redirect" value="{{$_GET['redirect']}}">
+                                @endif
                             </form>
                         </div>
                     </article>
