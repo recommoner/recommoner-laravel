@@ -41,7 +41,7 @@
         <span>{{$data['item']->created_at}}</span>
     </div>
     <div class="form-group mb2">
-        <img style="width: 100%;" src="{{ asset('uploads/actual-'. $data['item']->thumbnail.'')}}"
+        <img style="width: 100%;" src="{{ asset('uploads/'. $data['item']->thumbnail.'')}}"
              class="image-replace">
     </div>
     <div class="form-group mb2">
