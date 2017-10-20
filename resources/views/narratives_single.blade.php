@@ -40,8 +40,8 @@
         <h1>{{$data['item']->title}}</h1>
         <span>{{$data['item']->created_at}}</span>
     </div>
-    <div class="form-group mb2">
-        <img style="width: 100%;" src="{{ asset('uploads/'. $data['item']->thumbnail.'')}}"
+    <div class="form-group mb2" style="text-align: center;">
+        <img src="{{ asset('uploads/'. $data['item']->thumbnail.'')}}"
              class="image-replace">
     </div>
     <div class="form-group mb2">
@@ -52,7 +52,8 @@
         <div class="form-group">
             <h3>Comments</h3>
             @if (Auth::guest())
-            <p>Please <a href="{{url('login?redirect='.Request::path())}}">sign in</a> or <a href="{{url('register?redirect='.Request::path())}}">create an account</a> to
+            <p>Please <a href="{{url('login?redirect='.Request::path())}}">sign in</a> or <a
+                        href="{{url('register?redirect='.Request::path())}}">create an account</a> to
                 post a comment</p>
             @endif
 
