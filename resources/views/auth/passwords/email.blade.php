@@ -8,11 +8,11 @@
             <div class="mw8 w-31 mt5 center ph2 ph3-ns pv4 mb5 brdr3 bg-white">
                 <div class="panel panel-default">
                     <h3 class="text-center loginName">Forgot Password</h3>
-                    <p>We will send you an email to reset the password</p>
+
                     <div class="panel-body mt4">
                         @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                        <div class="alert alert-success" style="color: green; margin-bottom: 20px">
+                            We have emailed your password resend link.
                         </div>
                         @endif
 

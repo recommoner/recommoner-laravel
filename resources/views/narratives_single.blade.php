@@ -40,12 +40,16 @@
         <span>{{$data['item']->created_at}}</span>
     </div>
     <div class="form-group mb2">
+        <img src="{{ asset('uploads/'. $data['item']->thumbnail.'')}}" class="image-replace">
+    </div>
+    <div class="form-group mb2">
         {!! $data['item']->contents !!}
     </div>
     <div id="comments" class="row col-md-12 form-group">
         <hr>
         <div class="form-group">
             <h3>Comments</h3>
+            <p>Please sign in or create an account to post a comment</p>
         </div>
         <div class="row">
             @foreach($data['comments'] as $post)
@@ -65,6 +69,7 @@
         <div class="row">
 
         </div>
+        @if (!Auth::guest())
         <div class="row mt4">
             <div class="col-md-8">
                 <form action="{{url('comments/')}}" method="POST">
@@ -91,6 +96,7 @@
             <div class="col-md-4"></div>
 
         </div>
+        @endif
     </div>
 </div>
 
