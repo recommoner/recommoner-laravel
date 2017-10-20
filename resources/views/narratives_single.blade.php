@@ -34,13 +34,15 @@
         padding-bottom: 0px !important;
     }
 </style>
-<div class="container panel mt5 mb5" style="padding-left: 75px !important; padding-right: 75px !important;">
+<div class="container panel mt4 mb5"
+     style="padding-left: 50px !important; padding-right: 50px !important; max-width: 1000px">
     <div class="form-group titleSet">
         <h1>{{$data['item']->title}}</h1>
         <span>{{$data['item']->created_at}}</span>
     </div>
     <div class="form-group mb2">
-        <img src="{{ asset('uploads/'. $data['item']->thumbnail.'')}}" class="image-replace">
+        <img style="width: 100%;" src="{{ asset('uploads/actual-'. $data['item']->thumbnail.'')}}"
+             class="image-replace">
     </div>
     <div class="form-group mb2">
         {!! $data['item']->contents !!}

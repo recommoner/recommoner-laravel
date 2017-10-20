@@ -63,6 +63,10 @@ class articlesController extends Controller
         $article->description = $request->description;
         $article->status = $request->status;
         $path = $request->thumbnail->store('', 'public');
+
+        // copy it before creating a thumbnail
+        $this->duplicateImage($path);
+
         // crop the image as thumbnail
         $this->createThumbnail($path, 465, 542);
         $article->user = $user->id;
@@ -72,6 +76,12 @@ class articlesController extends Controller
             Mail::to(env('NOTIFICATION_SEND'))->send(new EmailNotification(['name' => $user['name'], 'title' => $article->title, 'id' => $article->id]));
         }
         return redirect('articles?added=1');
+    }
+
+
+    protected function duplicateImage($path)
+    {
+        copy(public_path('uploads/' . $path), public_path('uploads/actual-' . $path));
     }
 
     /**
