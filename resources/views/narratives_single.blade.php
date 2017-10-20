@@ -49,7 +49,8 @@
         <hr>
         <div class="form-group">
             <h3>Comments</h3>
-            <p>Please sign in or create an account to post a comment</p>
+            <p>Please <a href="{{url('login')}}">sign in</a> or <a href="{{url('register')}}">create an account</a> to
+                post a comment</p>
         </div>
         <div class="row">
             @foreach($data['comments'] as $post)
