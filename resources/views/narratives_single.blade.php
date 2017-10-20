@@ -55,6 +55,10 @@
             <p>Please <a href="{{url('login')}}">sign in</a> or <a href="{{url('register')}}">create an account</a> to
                 post a comment</p>
             @endif
+
+            @if (isset($_GET['comment_success']))
+            <p style="color: green">Thanks. Your comment has been posted, It will be published after review</p>
+            @endif
         </div>
         <div class="row">
             @foreach($data['comments'] as $post)

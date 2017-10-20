@@ -60,7 +60,7 @@ class CommentsController extends Controller
         $comment->status = $request->status;
         $comment->updated_at = $request->updated_at;
         $comment->save();
-        return redirect('narratives/' . $comment->post . '#comments');
+        return redirect('narratives/' . $comment->post . '?comment_success#comments');
     }
 
     /**
