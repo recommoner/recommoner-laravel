@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Mail;
 class articlesController extends Controller
 {
 
-    protected $height = 684;
-    protected $width = 513;
+    protected $width = 684;
+    protected $height = 413;
 
     function __construct()
     {
