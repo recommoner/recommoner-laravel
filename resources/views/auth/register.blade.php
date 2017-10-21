@@ -68,9 +68,9 @@
                                 <p>Already have a account <a style="color: #FF7734" href="{{ url('login') }}">login</a>
                                 </p>
                             </div>
-                            @ if(isset($_GET['redirect']))
-                            <input type="hidden" name="redirect" value="{{$_GET['redirect']}}">
-                            @endif
+                            <?php if (isset($_GET['redirect'])) { ?>
+                                <input type="hidden" name="redirect" value="{{$_GET['redirect']}}">
+                            <?php } ?>
                         </form>
                     </div>
                 </div>

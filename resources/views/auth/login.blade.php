@@ -50,7 +50,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-12 mt3">
-<!--                                    {!! Recaptcha::render() !!}-->
+                                    <!--                                    {!! Recaptcha::render() !!}-->
                                 </div>
 
                                 <div class="col-md-12" style="margin-top: 15px">
@@ -61,9 +61,9 @@
                                     <p><a class="pull-right" style="color: #FF7734" href="{{ url('password/reset') }}">Forget
                                             Password</a></p>
                                 </div>
-                                @ if(isset($_GET['redirect']))
-                                <input type="hidden" name="redirect" value="{{$_GET['redirect']}}">
-                                @endif
+                                <?php if (isset($_GET['redirect'])) { ?>
+                                    <input type="hidden" name="redirect" value="{{$_GET['redirect']}}">
+                                <?php } ?>
                             </form>
                         </div>
                     </article>
