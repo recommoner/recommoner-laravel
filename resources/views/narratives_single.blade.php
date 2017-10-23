@@ -29,7 +29,7 @@
     }
 
     .pa3 {
-        padding-bottom: 0px !important;
+        padding-bottom: 0 !important;
     }
 </style>
 <div class="container panel mt4 mb5"
@@ -107,6 +107,4 @@
         @endif
     </div>
 </div>
-
-
 @endsection

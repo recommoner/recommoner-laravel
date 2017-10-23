@@ -26,7 +26,7 @@
     <div class="clearfix"></div>
 
     @if (count($articles) == 0)
-    <h3 style="text-align: center; color: #bf2511">Not any article uploaded yet</h3>
+    <h3 style="text-align: center; color: #bf2511">No article has been uploaded yet</h3>
     @endif
 
     @foreach($articles as $post)
